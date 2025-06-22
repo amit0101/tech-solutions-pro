@@ -36,6 +36,53 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
   -->
+
+  <!-- Revenue Magick Tracking Script -->
+  <script>
+  (function() {
+    // Revenue Magick Configuration
+    window.RevenueMagickConfig = {
+      "trackingId": "rm_6ad49cbd-52a7-49e5-9580-d5df0abbef22_87ba5944",
+      "publicApiEndpoint": "https://revenue-magick-api.onrender.com/api/v1/tracking/public",
+      "sdkBaseUrl": "https://www.revenuemagick.com/sdk",
+      "batchSize": 10,
+      "flushInterval": 5000,
+      "sessionTimeout": 1800000,
+      "features": [
+          "page_view_tracking",
+          "click_tracking",
+          "scroll_tracking",
+          "form_tracking",
+          "cta_hover_tracking",
+          "mouse_movement_tracking",
+          "viewport_engagement",
+          "hesitation_detection",
+          "behavioral_signals"
+      ],
+      "useEnhancedProcessing": false,
+      "autoPostConversions": false,
+      "sanitizePII": false,
+      "enableServerSidePosting": false
+  };
+
+  // Load Revenue Magick Tracking SDK
+  var script = document.createElement('script');
+  script.src = 'https://www.revenuemagick.com/sdk/revenue-magick-tracker.min.js';
+  script.async = true;
+  script.onload = function() {
+    if (window.RevenueMagick) {
+      window.RevenueMagick.init(window.RevenueMagickConfig);
+      console.log('Revenue Magick Tracker initialized successfully');
+    }
+  };
+  script.onerror = function() {
+    console.error('Failed to load Revenue Magick Tracker');
+  };
+  document.head.appendChild(script);
+  })();
+  </script>
+<!-- End Revenue Magick Tracking Script -->
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
